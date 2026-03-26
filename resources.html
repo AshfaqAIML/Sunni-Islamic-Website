@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Islamic Knowledge & Hanafi Teachings</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body data-noor-mode="stream">
 
-    <!-- UNDER DEVELOPMENT NOTICE - Add this right after opening <body> tag -->
-<div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-bottom: 3px solid #f57c00; padding: 1rem 2rem; text-align: center; position: relative; z-index: 200;">
-    <p style="margin: 0; color: #e65100; font-size: 1rem; font-weight: 600;">
-        ⚠️ This website is currently under development. Many links and features are not yet working. إن شاء الله (Insha'Allah), it will be completed soon. جزاكم الله خيرا (JazakAllahu Khairan) for your patience.
-    </p>
-</div>
+  
 
     <div class="noor-container" id="noorContainer"></div>
 
+    
     <header>
         <nav>
             <div class="logo-section">
                 <a href="index.html" class="site-title">Islamic Knowledge & Hanafi Teachings</a>
-                <div class="site-subtitle">Clarity, Authenticity, Humility</div>
+                <span class="site-subtitle">Clarity, Authenticity, Humility</span>
             </div>
+
             <ul>
+                
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="Awliya_Allah.html">Awliya_Allah</a></li>
+                <li><a href="questions.html">Questions</a></li>
+                <li><a href="hanafi.html">Hanafi Fiqh</a></li>
+                <li><a href="ahmadrazakhan.html">Ahmad Raza Khan</a></li>
+                <li><a href="resources.html">Resources</a></li>
                 <li><a href="books.html">Books</a></li>
                 <li><a href="articles.html">Articles</a></li>
-                <li><a href="hanafi.html">Hanafi Madhhab</a></li>
-                <li><a href="ahmadrazakhan.html">Ahmad Raza Khan</a></li>
-                <li><a href="questions.html">Questions</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="links.html">Useful Links</a></li>
                 <li><a href="additionalResources.html">Additional Useful Links & Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                
             </ul>
         </nav>
     </header>
+
+
 
     <div class="container">
         <div class="page-header">
@@ -244,23 +246,5 @@
         <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #c2185b; font-style: italic;">اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي وَعَلِّمْنِي مَا يَنْفَعُنِي</p>
     </footer>
 
-    <script>
-        const noorContainer = document.getElementById('noorContainer');
-        
-        function createLightRay() {
-            const ray = document.createElement('div');
-            ray.className = 'light-ray';
-            ray.style.left = Math.random() * 100 + '%';
-            ray.style.animationDelay = Math.random() * 5 + 's';
-            ray.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            noorContainer.appendChild(ray);
-            setTimeout(() => ray.remove(), 10000);
-        }
-        
-        setInterval(createLightRay, 1500);
-        for(let i = 0; i < 5; i++) {
-            setTimeout(createLightRay, i * 500);
-        }
-    </script>
 </body>
 </html>

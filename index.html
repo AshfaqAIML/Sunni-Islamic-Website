@@ -6,40 +6,40 @@
     <title>Islamic Knowledge & Hanafi Teachings</title>
     
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body data-noor-mode="stream" data-particle-mode="stream">
 
-    <!-- UNDER DEVELOPMENT NOTICE - Add this right after opening <body> tag -->
-<div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-bottom: 3px solid #f57c00; padding: 1rem 2rem; text-align: center; position: relative; z-index: 200;">
-    <p style="margin: 0; color: #e65100; font-size: 1rem; font-weight: 600;">
-        ⚠️ This website is currently under development. Many links and features are not yet working. إن شاء الله (Insha'Allah), it will be completed soon. جزاكم الله خيرا (JazakAllahu Khairan) for your patience.
-    </p>
-</div>
-
-    <!-- Noor (Light) Effect Container -->
-    <div class="noor-container" id="noorContainer"></div>
-
+   
     <header>
         <nav>
             <div class="logo-section">
-                <div class="site-title">Islamic Knowledge & Hanafi Teachings</div>
-                <div class="site-subtitle">Clarity, Authenticity, Humility</div>
+                <a href="index.html" class="site-title">Islamic Knowledge & Hanafi Teachings</a>
+                <span class="site-subtitle">Clarity, Authenticity, Humility</span>
             </div>
+
             <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
-    <li><a href="articles.html">Articles</a></li>
-    <li><a href="hanafi.html">Hanafi Madhhab</a></li>
-    <li><a href="ahmadrazakhan.html">Ahmad Raza Khan</a></li>
-    <li><a href="questions.html">Questions</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="additionalResources.html">Additional Useful Links & Resources</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    
-</ul>
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Awliya_Allah.html">Awliya_Allah</a></li>
+                <li><a href="questions.html">Questions</a></li>
+                <li><a href="hanafi.html">Hanafi Fiqh</a></li>
+                <li><a href="ahmadrazakhan.html">Ahmad Raza Khan</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="links.html">Useful Links</a></li>
+                <li><a href="additionalResources.html">Additional Useful Links & Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
+
+
+    <div class="noor-container" id="noorContainer"></div>
+
+   
 
     <div class="container">
         <div class="hero">
@@ -85,6 +85,10 @@
         <div class="sections">
             <h2>Explore the Website</h2>
             <div class="section-links">
+                <a href="about.html" class="section-link">
+                    <h3>About</h3>
+                    <p>Learn the purpose of this platform, its approach, and the intention behind sharing these resources.</p>
+                </a>
                 <a href="books.html" class="section-link">
                     <h3>Books</h3>
                     <p>Comprehensive works on Islamic topics, designed for careful study and reflection.</p>
@@ -97,6 +101,14 @@
                     <h3>Understanding the Hanafi Madhhab</h3>
                     <p>A beginner-friendly guide to the Hanafi school of Islamic jurisprudence.</p>
                 </a>
+                <a href="Awliya_Allah.html" class="section-link">
+                    <h3>Awliya Allah</h3>
+                    <p>Understand the status of the righteous friends of Allah with clear Sunni principles and proper boundaries.</p>
+                </a>
+                <a href="ahmadrazakhan.html" class="section-link">
+                    <h3>Imam Ahmad Raza Khan</h3>
+                    <p>Explore the life, scholarship, and enduring contributions of Imam Ahmad Raza Khan رحمه الله.</p>
+                </a>
                 <a href="questions.html" class="section-link">
                     <h3>Common Questions</h3>
                     <p>Answers to frequently asked questions about faith, practice, and Islamic methodology.</p>
@@ -104,6 +116,14 @@
                 <a href="resources.html" class="section-link">
                     <h3>Resources</h3>
                     <p>Recommended books and guidance for those beginning their Islamic learning journey.</p>
+                </a>
+                <a href="links.html" class="section-link">
+                    <h3>Useful Links</h3>
+                    <p>Visit a curated collection of beneficial websites, channels, and online reference material.</p>
+                </a>
+                <a href="additionalResources.html" class="section-link">
+                    <h3>Additional Resources</h3>
+                    <p>Browse extended study links, video recommendations, and extra learning resources in one place.</p>
                 </a>
                 <a href="contact.html" class="section-link">
                     <h3>Contact</h3>
@@ -118,54 +138,6 @@
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">May Allah grant us sincerity and benefit in our efforts</p>
     </footer>
 
-    <script>
-        // Create falling light rays (Noor effect)
-        const noorContainer = document.getElementById('noorContainer');
-        
-        function createLightRay() {
-            const ray = document.createElement('div');
-            ray.className = 'light-ray';
-            ray.style.left = Math.random() * 100 + '%';
-            ray.style.animationDelay = Math.random() * 5 + 's';
-            ray.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            noorContainer.appendChild(ray);
-            
-            // Remove after animation
-            setTimeout(() => {
-                ray.remove();
-            }, 10000);
-        }
-        
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.bottom = '0';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-            noorContainer.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 25000);
-        }
-        
-        // Generate light rays periodically
-        setInterval(createLightRay, 1500);
-        
-        // Generate particles periodically
-        setInterval(createParticle, 3000);
-        
-        // Initial batch
-        for(let i = 0; i < 5; i++) {
-            setTimeout(createLightRay, i * 500);
-        }
-        
-        for(let i = 0; i < 3; i++) {
-            setTimeout(createParticle, i * 1000);
-        }
-    </script>
 </body>
 
 </html>

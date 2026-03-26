@@ -4,460 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Useful Links & Resources - Ahl al-Sunnah wal-Jama'ah</title>
-    <style>
-        :root {
-            --green-900: #1b5e20;
-            --green-700: #2e7d32;
-            --green-100: #e8f5e9;
-            --rose-700: #ad1457;
-            --rose-600: #c2185b;
-            --rose-100: #fce4ec;
-            --gold-600: #f57c00;
-            --gold-100: #fff3e0;
-            --ink-900: #22313f;
-            --ink-700: #4a5f4a;
-            --paper: rgba(255, 255, 255, 0.92);
-            --shadow: 0 14px 40px rgba(34, 49, 63, 0.1);
-            --radius: 18px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            color: var(--ink-900);
-            line-height: 1.75;
-            background:
-                radial-gradient(circle at top left, rgba(46, 125, 50, 0.08), transparent 35%),
-                radial-gradient(circle at bottom right, rgba(194, 24, 91, 0.08), transparent 30%),
-                linear-gradient(135deg, #f8faf8 0%, #eef7f0 45%, #fdf8fb 100%);
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .dev-banner {
-            position: relative;
-            z-index: 20;
-            padding: 1rem 1.5rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--gold-100), #ffe0b2);
-            border-bottom: 3px solid var(--gold-600);
-            color: #8a3f00;
-            font-weight: 600;
-        }
-
-        .noor-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .light-ray {
-            position: absolute;
-            top: -120px;
-            width: 2px;
-            height: 120px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-            opacity: 0;
-            animation: fallLight 9s linear infinite;
-        }
-
-        @keyframes fallLight {
-            0% {
-                transform: translateY(-120px);
-                opacity: 0;
-            }
-            12% {
-                opacity: 1;
-            }
-            88% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh);
-                opacity: 0;
-            }
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 15;
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.82);
-            border-bottom: 1px solid rgba(46, 125, 50, 0.12);
-            box-shadow: 0 6px 20px rgba(34, 49, 63, 0.06);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem 2rem;
-            flex-wrap: wrap;
-        }
-
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .site-title {
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--green-900);
-        }
-
-        .site-subtitle {
-            color: var(--rose-600);
-            font-size: 0.95rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem 1.2rem;
-            margin: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--green-700);
-            font-weight: 600;
-        }
-
-        nav a:hover,
-        nav a:focus-visible {
-            color: var(--rose-600);
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem 4rem;
-        }
-
-        .page-header {
-            padding: 3rem 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(232, 245, 233, 0.7));
-            border-radius: calc(var(--radius) + 6px);
-            box-shadow: var(--shadow);
-        }
-
-        .page-header h1 {
-            margin-bottom: 0.9rem;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.15;
-            color: var(--green-900);
-        }
-
-        .page-header p {
-            max-width: 760px;
-            margin: 0 auto;
-            color: var(--ink-700);
-            font-size: 1.08rem;
-        }
-
-        .intro-text,
-        .highlight-box,
-        .warning-box {
-            margin-bottom: 2rem;
-            padding: 1.5rem 1.6rem;
-            border-radius: var(--radius);
-            background: var(--paper);
-            box-shadow: var(--shadow);
-        }
-
-        .intro-text {
-            border-left: 5px solid var(--rose-600);
-        }
-
-        .highlight-box {
-            border-left: 5px solid var(--green-700);
-        }
-
-        .warning-box {
-            border-left: 5px solid var(--rose-600);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(252, 228, 236, 0.7));
-        }
-
-        .intro-text p:last-child,
-        .highlight-box p:last-child,
-        .warning-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .category-section {
-            margin-top: 3rem;
-        }
-
-        .category-title {
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.55rem;
-            border-bottom: 3px solid var(--rose-600);
-            color: var(--green-900);
-            font-size: 1.8rem;
-        }
-
-        .link-card,
-        .video-card,
-        .app-card,
-        .social-card {
-            background: var(--paper);
-            border: 1px solid rgba(46, 125, 50, 0.08);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .link-card:hover,
-        .video-card:hover,
-        .app-card:hover,
-        .social-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 42px rgba(34, 49, 63, 0.14);
-        }
-
-        .link-card {
-            padding: 1.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .link-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.85rem;
-        }
-
-        .link-header h3,
-        .video-info h3,
-        .app-card h3,
-        .social-card h3,
-        .highlight-box h3 {
-            color: var(--green-900);
-        }
-
-        .link-category {
-            padding: 0.35rem 0.8rem;
-            border-radius: 999px;
-            background: var(--rose-100);
-            color: var(--rose-700);
-            font-size: 0.85rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .link-description,
-        .channel-desc,
-        .app-card p,
-        .social-card p {
-            color: var(--ink-700);
-        }
-
-        .external-link {
-            display: inline-block;
-            margin-top: 0.75rem;
-            color: var(--rose-600);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .external-link:hover,
-        .external-link:focus-visible {
-            color: var(--rose-700);
-        }
-
-        .video-grid,
-        .app-grid,
-        .social-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .video-grid {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .app-grid {
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        }
-
-        .social-grid {
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        }
-
-        .video-thumbnail {
-            min-height: 180px;
-            padding: 1.25rem;
-            display: flex;
-            align-items: flex-end;
-            background:
-                linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.5)),
-                linear-gradient(135deg, var(--green-700), var(--rose-600));
-            color: #fff;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .video-info {
-            padding: 1.25rem;
-        }
-
-        .channel-stats {
-            margin-top: 0.9rem;
-            color: var(--ink-700);
-            font-size: 0.92rem;
-            font-weight: 600;
-        }
-
-        .app-card,
-        .social-card {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .app-icon,
-        .social-icon {
-            width: 74px;
-            height: 74px;
-            margin: 0 auto 1rem;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .app-icon {
-            background: linear-gradient(135deg, var(--green-700), var(--green-900));
-        }
-
-        .social-icon.twitter {
-            background: linear-gradient(135deg, #1d9bf0, #0b76c5);
-        }
-
-        .social-icon.instagram {
-            background: linear-gradient(135deg, #fd1d1d, #e1306c 45%, #833ab4);
-        }
-
-        .social-icon.telegram {
-            background: linear-gradient(135deg, #27a7e7, #0b6fa4);
-        }
-
-        .app-links,
-        .social-accounts {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.65rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .app-links a,
-        .social-accounts a,
-        .coming-soon {
-            padding: 0.5rem 0.85rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .app-links a,
-        .social-accounts a {
-            color: var(--green-900);
-            background: rgba(46, 125, 50, 0.1);
-        }
-
-        .app-links a:hover,
-        .social-accounts a:hover,
-        .app-links a:focus-visible,
-        .social-accounts a:focus-visible {
-            background: rgba(194, 24, 91, 0.12);
-            color: var(--rose-700);
-        }
-
-        .coming-soon {
-            background: rgba(74, 95, 74, 0.1);
-            color: var(--ink-700);
-            cursor: default;
-        }
-
-        footer {
-            position: relative;
-            z-index: 1;
-            padding: 2.5rem 1.5rem 3rem;
-            text-align: center;
-            color: var(--green-900);
-        }
-
-        footer p:last-child {
-            color: var(--rose-600);
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                align-items: flex-start;
-            }
-
-            .page-header,
-            .intro-text,
-            .highlight-box,
-            .warning-box,
-            .link-card,
-            .app-card,
-            .social-card {
-                padding: 1.2rem;
-            }
-
-            .video-thumbnail {
-                min-height: 160px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <div class="dev-banner">
-        This website is currently under development. Some links and features are still being completed. Insha'Allah it will be finished soon.
-    </div>
+<body data-noor-mode="stream">
 
-    <div class="noor-container" aria-hidden="true"></div>
 
-    <header>
+    <div class="noor-container" id="noorContainer" aria-hidden="true"></div>
+
+      <header>
         <nav>
             <div class="logo-section">
-                <a href="index.html" class="site-title">Ahl al-Sunnah wal-Jama'ah</a>
-                <span class="site-subtitle">أهل السنة والجماعة</span>
+                <a href="index.html" class="site-title">Islamic Knowledge & Hanafi Teachings</a>
+                <span class="site-subtitle">Clarity, Authenticity, Humility</span>
             </div>
 
             <ul>
+                
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="Awliya_Allah.html">Awliya_Allah</a></li>
                 <li><a href="questions.html">Questions</a></li>
                 <li><a href="hanafi.html">Hanafi Fiqh</a></li>
+                <li><a href="ahmadrazakhan.html">Ahmad Raza Khan</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="books.html">Books</a></li>
                 <li><a href="articles.html">Articles</a></li>
@@ -533,7 +102,7 @@
 
             <div class="video-grid">
                 <article class="video-card">
-                    <div class="video-thumbnail">Mubarak Ahmad Rabbani</div>
+                    <div class="video-thumbnail text-thumbnail">Mubarak Ahmad Rabbani</div>
                     <div class="video-info">
                         <h3>Mubarak Ahmad Rabbani</h3>
                         <p class="channel-desc">Short reminders and lessons on practical Islamic living, personal reform, and general guidance.</p>
@@ -543,7 +112,7 @@
                 </article>
 
                 <article class="video-card">
-                    <div class="video-thumbnail">Mufti Abu Layth</div>
+                    <div class="video-thumbnail text-thumbnail">Mufti Abu Layth</div>
                     <div class="video-info">
                         <h3>Mufti Abu Layth</h3>
                         <p class="channel-desc">Long-form discussions and reflections that engage Islamic thought, law, and contemporary questions.</p>
@@ -553,7 +122,7 @@
                 </article>
 
                 <article class="video-card">
-                    <div class="video-thumbnail">SeekersGuidance</div>
+                    <div class="video-thumbnail text-thumbnail">SeekersGuidance</div>
                     <div class="video-info">
                         <h3>SeekersGuidance</h3>
                         <p class="channel-desc">Structured lessons, class recordings, and educational clips from traditional Sunni scholars.</p>
@@ -563,7 +132,7 @@
                 </article>
 
                 <article class="video-card">
-                    <div class="video-thumbnail">Bayyinah Institute</div>
+                    <div class="video-thumbnail text-thumbnail">Bayyinah Institute</div>
                     <div class="video-info">
                         <h3>Bayyinah Institute</h3>
                         <p class="channel-desc">Qur'anic explanation, Arabic language instruction, and accessible teaching around the meanings of revelation.</p>
@@ -573,7 +142,7 @@
                 </article>
 
                 <article class="video-card">
-                    <div class="video-thumbnail">Islamic Guidance</div>
+                    <div class="video-thumbnail text-thumbnail">Islamic Guidance</div>
                     <div class="video-info">
                         <h3>Islamic Guidance</h3>
                         <p class="channel-desc">Short educational videos, reminders, and motivational content on faith, worship, and daily practice.</p>
@@ -583,7 +152,7 @@
                 </article>
 
                 <article class="video-card">
-                    <div class="video-thumbnail">The Muslim Skeptic</div>
+                    <div class="video-thumbnail text-thumbnail">The Muslim Skeptic</div>
                     <div class="video-info">
                         <h3>The Muslim Skeptic</h3>
                         <p class="channel-desc">Discussion-driven content on theology, philosophy, science, and modern ideological questions through an Islamic lens.</p>
@@ -743,23 +312,9 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Ahl al-Sunnah wal-Jama'ah. All rights reserved.</p>
-        <p>May Allah guide us all to the straight path.</p>
+     <footer>
+        <p>© 2026 Islamic Knowledge & Hanafi Teachings | In service to Allah and the Ummah</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #c2185b; font-style: italic;">May Allah accept our efforts and forgive our shortcomings</p>
     </footer>
-
-    <script>
-        const noorContainer = document.querySelector(".noor-container");
-
-        if (noorContainer) {
-            for (let i = 0; i < 15; i++) {
-                const ray = document.createElement("div");
-                ray.className = "light-ray";
-                ray.style.left = Math.random() * 100 + "%";
-                ray.style.animationDelay = Math.random() * 8 + "s";
-                noorContainer.appendChild(ray);
-            }
-        }
-    </script>
 </body>
 </html>
