@@ -4,17 +4,447 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Useful Links & Resources - Ahl al-Sunnah wal-Jama'ah</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --green-900: #1b5e20;
+            --green-700: #2e7d32;
+            --green-100: #e8f5e9;
+            --rose-700: #ad1457;
+            --rose-600: #c2185b;
+            --rose-100: #fce4ec;
+            --gold-600: #f57c00;
+            --gold-100: #fff3e0;
+            --ink-900: #22313f;
+            --ink-700: #4a5f4a;
+            --paper: rgba(255, 255, 255, 0.92);
+            --shadow: 0 14px 40px rgba(34, 49, 63, 0.1);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--ink-900);
+            line-height: 1.75;
+            background:
+                radial-gradient(circle at top left, rgba(46, 125, 50, 0.08), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(194, 24, 91, 0.08), transparent 30%),
+                linear-gradient(135deg, #f8faf8 0%, #eef7f0 45%, #fdf8fb 100%);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .dev-banner {
+            position: relative;
+            z-index: 20;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--gold-100), #ffe0b2);
+            border-bottom: 3px solid var(--gold-600);
+            color: #8a3f00;
+            font-weight: 600;
+        }
+
+        .noor-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .light-ray {
+            position: absolute;
+            top: -120px;
+            width: 2px;
+            height: 120px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+            opacity: 0;
+            animation: fallLight 9s linear infinite;
+        }
+
+        @keyframes fallLight {
+            0% {
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+            12% {
+                opacity: 1;
+            }
+            88% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 15;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.82);
+            border-bottom: 1px solid rgba(46, 125, 50, 0.12);
+            box-shadow: 0 6px 20px rgba(34, 49, 63, 0.06);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-title {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--green-900);
+        }
+
+        .site-subtitle {
+            color: var(--rose-600);
+            font-size: 0.95rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.2rem;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--green-700);
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--rose-600);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .page-header {
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(232, 245, 233, 0.7));
+            border-radius: calc(var(--radius) + 6px);
+            box-shadow: var(--shadow);
+        }
+
+        .page-header h1 {
+            margin-bottom: 0.9rem;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--green-900);
+        }
+
+        .page-header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--ink-700);
+            font-size: 1.08rem;
+        }
+
+        .intro-text,
+        .highlight-box,
+        .warning-box {
+            margin-bottom: 2rem;
+            padding: 1.5rem 1.6rem;
+            border-radius: var(--radius);
+            background: var(--paper);
+            box-shadow: var(--shadow);
+        }
+
+        .intro-text {
+            border-left: 5px solid var(--rose-600);
+        }
+
+        .highlight-box {
+            border-left: 5px solid var(--green-700);
+        }
+
+        .warning-box {
+            border-left: 5px solid var(--rose-600);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(252, 228, 236, 0.7));
+        }
+
+        .intro-text p:last-child,
+        .highlight-box p:last-child,
+        .warning-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-section {
+            margin-top: 3rem;
+        }
+
+        .category-title {
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.55rem;
+            border-bottom: 3px solid var(--rose-600);
+            color: var(--green-900);
+            font-size: 1.8rem;
+        }
+
+        .link-card,
+        .video-card,
+        .app-card,
+        .social-card {
+            background: var(--paper);
+            border: 1px solid rgba(46, 125, 50, 0.08);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .link-card:hover,
+        .video-card:hover,
+        .app-card:hover,
+        .social-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 42px rgba(34, 49, 63, 0.14);
+        }
+
+        .link-card {
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .link-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.85rem;
+        }
+
+        .link-header h3,
+        .video-info h3,
+        .app-card h3,
+        .social-card h3,
+        .highlight-box h3 {
+            color: var(--green-900);
+        }
+
+        .link-category {
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: var(--rose-100);
+            color: var(--rose-700);
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .link-description,
+        .channel-desc,
+        .app-card p,
+        .social-card p {
+            color: var(--ink-700);
+        }
+
+        .external-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--rose-600);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .external-link:hover,
+        .external-link:focus-visible {
+            color: var(--rose-700);
+        }
+
+        .video-grid,
+        .app-grid,
+        .social-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .video-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .app-grid {
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        }
+
+        .social-grid {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .video-thumbnail {
+            min-height: 180px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.5)),
+                linear-gradient(135deg, var(--green-700), var(--rose-600));
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .video-info {
+            padding: 1.25rem;
+        }
+
+        .channel-stats {
+            margin-top: 0.9rem;
+            color: var(--ink-700);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .app-card,
+        .social-card {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .app-icon,
+        .social-icon {
+            width: 74px;
+            height: 74px;
+            margin: 0 auto 1rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .app-icon {
+            background: linear-gradient(135deg, var(--green-700), var(--green-900));
+        }
+
+        .social-icon.twitter {
+            background: linear-gradient(135deg, #1d9bf0, #0b76c5);
+        }
+
+        .social-icon.instagram {
+            background: linear-gradient(135deg, #fd1d1d, #e1306c 45%, #833ab4);
+        }
+
+        .social-icon.telegram {
+            background: linear-gradient(135deg, #27a7e7, #0b6fa4);
+        }
+
+        .app-links,
+        .social-accounts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .app-links a,
+        .social-accounts a,
+        .coming-soon {
+            padding: 0.5rem 0.85rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .app-links a,
+        .social-accounts a {
+            color: var(--green-900);
+            background: rgba(46, 125, 50, 0.1);
+        }
+
+        .app-links a:hover,
+        .social-accounts a:hover,
+        .app-links a:focus-visible,
+        .social-accounts a:focus-visible {
+            background: rgba(194, 24, 91, 0.12);
+            color: var(--rose-700);
+        }
+
+        .coming-soon {
+            background: rgba(74, 95, 74, 0.1);
+            color: var(--ink-700);
+            cursor: default;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 2.5rem 1.5rem 3rem;
+            text-align: center;
+            color: var(--green-900);
+        }
+
+        footer p:last-child {
+            color: var(--rose-600);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                align-items: flex-start;
+            }
+
+            .page-header,
+            .intro-text,
+            .highlight-box,
+            .warning-box,
+            .link-card,
+            .app-card,
+            .social-card {
+                padding: 1.2rem;
+            }
+
+            .video-thumbnail {
+                min-height: 160px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="dev-banner">
+        This website is currently under development. Some links and features are still being completed. Insha'Allah it will be finished soon.
+    </div>
 
-  <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-bottom: 3px solid #f57c00; padding: 1rem 2rem; text-align: center; position: relative; z-index: 200;">
-    <p style="margin: 0; color: #e65100; font-size: 1rem; font-weight: 600;">
-        ⚠️ This website is currently under development. Many links and features are not yet working. إن شاء الله (Insha'Allah), it will be completed soon. جزاكم الله خيرا (JazakAllahu Khairan) for your patience.
-    </p>
-</div>
-    <!-- Noor container -->
-    <div class="noor-container"></div>
+    <div class="noor-container" aria-hidden="true"></div>
 
     <header>
         <nav>
@@ -22,7 +452,7 @@
                 <a href="index.html" class="site-title">Ahl al-Sunnah wal-Jama'ah</a>
                 <span class="site-subtitle">أهل السنة والجماعة</span>
             </div>
-            
+
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -34,397 +464,301 @@
                 <li><a href="links.html">Useful Links</a></li>
                 <li><a href="additionalResources.html">Additional Useful Links & Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                
-                                           
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <!-- Page Header -->
-        <div class="page-header">
+    <main class="container">
+        <section class="page-header">
             <h1>Useful Links & Resources</h1>
-            <p>Curated collection of authentic Islamic websites, YouTube channels, and educational resources</p>
-        </div>
+            <p>Curated authentic Islamic websites, educational channels, podcasts, reading platforms, and digital tools to support beneficial learning.</p>
+        </section>
 
-        <!-- Introduction -->
-        <div class="intro-text">
-            <p>We have carefully selected these resources to help you in your journey of seeking authentic Islamic knowledge. All links provided are from reliable scholars and organizations following the path of Ahl al-Sunnah wal-Jama'ah.</p>
-            <p><strong>Note:</strong> While we recommend these resources, please always verify information with qualified scholars.</p>
-        </div>
+        <section class="intro-text">
+            <p>These resources were selected to help visitors access reliable Islamic material and structured learning opportunities. They are intended as a starting point for study, not a replacement for qualified scholarship and local teachers.</p>
+            <p><strong>Note:</strong> Always verify important matters with trustworthy scholars, especially in questions of creed, worship, and personal rulings.</p>
+        </section>
 
-        <!-- Islamic Websites Section -->
         <section class="category-section">
-            <h2 class="category-title">📚 Islamic Websites</h2>
+            <h2 class="category-title">Islamic Websites</h2>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Sunni Path</h3>
                     <span class="link-category">General Knowledge</span>
                 </div>
-                <p class="link-description">Comprehensive resource for traditional Islamic knowledge, featuring articles on Islamic beliefs, practices, and spirituality according to authentic Sunni scholarship.</p>
-                <a href="https://www.sunnipath.com" target="_blank" class="external-link">
-                    Visit Website →
-                </a>
-            </div>
+                <p class="link-description">Traditional Sunni learning resources with articles on belief, worship, spirituality, and practical guidance.</p>
+                <a href="https://www.sunnipath.com" target="_blank" rel="noopener noreferrer" class="external-link">Visit Website →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>SeekersGuidance</h3>
                     <span class="link-category">Islamic Education</span>
                 </div>
-                <p class="link-description">Free online Islamic courses and classes taught by qualified scholars. Offers structured learning in various Islamic sciences.</p>
-                <a href="https://seekersguidance.org" target="_blank" class="external-link">
-                    Visit Website →
-                </a>
-            </div>
+                <p class="link-description">Free online classes, courses, and answers taught by qualified teachers across a wide range of Islamic sciences.</p>
+                <a href="https://seekersguidance.org" target="_blank" rel="noopener noreferrer" class="external-link">Visit Website →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
-                    <h3>Islamqa.org (Mufti Muhammad ibn Adam)</h3>
+                    <h3>IslamQA.org</h3>
                     <span class="link-category">Hanafi Fiqh</span>
                 </div>
-                <p class="link-description">Questions and answers on Islamic jurisprudence according to the Hanafi school of thought, answered by qualified Hanafi scholars.</p>
-                <a href="https://islamqa.org" target="_blank" class="external-link">
-                    Visit Website →
-                </a>
-            </div>
+                <p class="link-description">A searchable library of answers from recognized scholars, including substantial Hanafi fiqh content.</p>
+                <a href="https://islamqa.org" target="_blank" rel="noopener noreferrer" class="external-link">Visit Website →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Imam Ghazali Institute</h3>
-                    <span class="link-category">Spirituality & Tasawwuf</span>
+                    <span class="link-category">Spirituality</span>
                 </div>
-                <p class="link-description">Resources on Islamic spirituality, purification of the heart, and the classical works of Imam al-Ghazali.</p>
-                <a href="https://www.ghazali.org" target="_blank" class="external-link">
-                    Visit Website →
-                </a>
-            </div>
+                <p class="link-description">Material centered on purification of the heart, inner refinement, and classical Islamic spirituality.</p>
+                <a href="https://www.ghazali.org" target="_blank" rel="noopener noreferrer" class="external-link">Visit Website →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Sunnah.com</h3>
                     <span class="link-category">Hadith Collection</span>
                 </div>
-                <p class="link-description">Complete collection of authentic hadith books with English translations and search functionality.</p>
-                <a href="https://sunnah.com" target="_blank" class="external-link">
-                    Visit Website →
-                </a>
-            </div>
+                <p class="link-description">A widely used searchable hadith reference containing major collections and English translations.</p>
+                <a href="https://sunnah.com" target="_blank" rel="noopener noreferrer" class="external-link">Visit Website →</a>
+            </article>
         </section>
 
-        <!-- YouTube Channels Section -->
         <section class="category-section">
-            <h2 class="category-title">🎥 YouTube Channels</h2>
+            <h2 class="category-title">YouTube Channels</h2>
 
             <div class="video-grid">
-                <!-- Channel 1 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/2e7d32/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">Mubarak Ahmad Rabbani</div>
                     <div class="video-info">
-                        <h3>Mufti Menk</h3>
-                        <p class="channel-desc">Inspirational lectures and guidance on various Islamic topics by Mufti Ismail Menk.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 8M+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@muftimenk" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <h3>Mubarak Ahmad Rabbani</h3>
+                        <p class="channel-desc">Short reminders and lessons on practical Islamic living, personal reform, and general guidance.</p>
+                        <div class="channel-stats">Subscribers: 5.7k+</div>
+                        <a href="https://www.youtube.com/@MUBARAKAHMADRABANI" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Channel 2 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/c2185b/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">Mufti Abu Layth</div>
                     <div class="video-info">
                         <h3>Mufti Abu Layth</h3>
-                        <p class="channel-desc">Traditional Islamic knowledge with contemporary understanding and thoughtful discussions.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 200K+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@MuftiAbuLayth" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <p class="channel-desc">Long-form discussions and reflections that engage Islamic thought, law, and contemporary questions.</p>
+                        <div class="channel-stats">Subscribers: 200k+</div>
+                        <a href="https://www.youtube.com/@MuftiAbuLayth" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Channel 3 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/2e7d32/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">SeekersGuidance</div>
                     <div class="video-info">
                         <h3>SeekersGuidance</h3>
-                        <p class="channel-desc">Free online Islamic courses and classes from qualified traditional scholars.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 150K+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@seekersguidance" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <p class="channel-desc">Structured lessons, class recordings, and educational clips from traditional Sunni scholars.</p>
+                        <div class="channel-stats">Subscribers: 150k+</div>
+                        <a href="https://www.youtube.com/@seekersguidance" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Channel 4 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/c2185b/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">Bayyinah Institute</div>
                     <div class="video-info">
                         <h3>Bayyinah Institute</h3>
-                        <p class="channel-desc">Arabic language learning and Quranic studies with Ustadh Nouman Ali Khan.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 2M+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@bayyinahinstitute" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <p class="channel-desc">Qur'anic explanation, Arabic language instruction, and accessible teaching around the meanings of revelation.</p>
+                        <div class="channel-stats">Subscribers: 2m+</div>
+                        <a href="https://www.youtube.com/@bayyinahinstitute" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Channel 5 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/2e7d32/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">Islamic Guidance</div>
                     <div class="video-info">
                         <h3>Islamic Guidance</h3>
-                        <p class="channel-desc">Educational Islamic content covering various topics of faith, practice, and contemporary issues.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 500K+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@IslamicGuidance" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <p class="channel-desc">Short educational videos, reminders, and motivational content on faith, worship, and daily practice.</p>
+                        <div class="channel-stats">Subscribers: 500k+</div>
+                        <a href="https://www.youtube.com/@IslamicGuidance" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Channel 6 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/320x180/c2185b/ffffff?text=Islamic+Channel" alt="Channel thumbnail">
-                        <div class="video-overlay">
-                            <span>▶</span>
-                        </div>
-                    </div>
+                <article class="video-card">
+                    <div class="video-thumbnail">The Muslim Skeptic</div>
                     <div class="video-info">
-                        <h3>Yaqeen Institute</h3>
-                        <p class="channel-desc">Research-based Islamic content addressing contemporary challenges and doubts.</p>
-                        <div class="channel-stats">
-                            <span>📺 Subscribers: 400K+</span>
-                        </div>
-                        <a href="https://www.youtube.com/@yaqeeninstitute" target="_blank" class="external-link">
-                            Watch Channel →
-                        </a>
+                        <h3>The Muslim Skeptic</h3>
+                        <p class="channel-desc">Discussion-driven content on theology, philosophy, science, and modern ideological questions through an Islamic lens.</p>
+                        <div class="channel-stats">Subscribers: 456k+</div>
+                        <a href="https://www.youtube.com/@MuslimSkeptic" target="_blank" rel="noopener noreferrer" class="external-link">Watch Channel →</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <!-- Podcast Section -->
         <section class="category-section">
-            <h2 class="category-title">🎙️ Islamic Podcasts</h2>
+            <h2 class="category-title">Islamic Podcasts</h2>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>The Mad Mamluks</h3>
                     <span class="link-category">Islamic Discussion</span>
                 </div>
-                <p class="link-description">In-depth discussions on Islamic topics, current events, and thoughtful conversations about faith and practice.</p>
-                <a href="https://www.youtube.com/@TheMadMamluks" target="_blank" class="external-link">
-                    Listen Now →
-                </a>
-            </div>
+                <p class="link-description">Long-form conversations on Muslim life, contemporary issues, politics, culture, and religious thought.</p>
+                <a href="https://www.youtube.com/@TheMadMamluks" target="_blank" rel="noopener noreferrer" class="external-link">Listen Now →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Blogging Theology</h3>
                     <span class="link-category">Theology & Philosophy</span>
                 </div>
-                <p class="link-description">Interviews and discussions on Islamic theology, philosophy, and comparative religion.</p>
-                <a href="https://www.youtube.com/@BloggingTheology" target="_blank" class="external-link">
-                    Listen Now →
-                </a>
-            </div>
+                <p class="link-description">Interviews and reflective conversations on theology, philosophy of religion, and comparative faith discussions.</p>
+                <a href="https://www.youtube.com/@BloggingTheology" target="_blank" rel="noopener noreferrer" class="external-link">Listen Now →</a>
+            </article>
         </section>
 
-        <!-- Online Libraries Section -->
         <section class="category-section">
-            <h2 class="category-title">📖 Online Libraries & Archives</h2>
+            <h2 class="category-title">Online Libraries & Archives</h2>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Al-Maktaba al-Shamela</h3>
                     <span class="link-category">Arabic Library</span>
                 </div>
-                <p class="link-description">Comprehensive digital library of classical Islamic texts in Arabic, containing thousands of books from various Islamic sciences.</p>
-                <a href="https://shamela.ws" target="_blank" class="external-link">
-                    Visit Library →
-                </a>
-            </div>
+                <p class="link-description">A large Arabic digital library containing classical and modern works across many Islamic disciplines.</p>
+                <a href="https://shamela.ws" target="_blank" rel="noopener noreferrer" class="external-link">Visit Library →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
-                    <h3>Internet Archive - Islamic Texts</h3>
+                    <h3>Internet Archive</h3>
                     <span class="link-category">Digital Archive</span>
                 </div>
-                <p class="link-description">Free access to thousands of Islamic books, manuscripts, and historical documents in multiple languages.</p>
-                <a href="https://archive.org/details/texts" target="_blank" class="external-link">
-                    Visit Archive →
-                </a>
-            </div>
+                <p class="link-description">A broad archive with scanned Islamic books, public-domain texts, recordings, and historical material.</p>
+                <a href="https://archive.org/details/texts" target="_blank" rel="noopener noreferrer" class="external-link">Visit Archive →</a>
+            </article>
 
-            <div class="link-card">
+            <article class="link-card">
                 <div class="link-header">
                     <h3>Furqaan Bookstore</h3>
                     <span class="link-category">Islamic Books</span>
                 </div>
-                <p class="link-description">Online bookstore specializing in traditional Islamic books and classical texts in English.</p>
-                <a href="https://www.furqaanbookstore.com" target="_blank" class="external-link">
-                    Visit Store →
-                </a>
-            </div>
+                <p class="link-description">A source for English-language Islamic books and classical works published for modern readers.</p>
+                <a href="https://www.furqaanbookstore.com" target="_blank" rel="noopener noreferrer" class="external-link">Visit Store →</a>
+            </article>
         </section>
 
-        <!-- Apps Section -->
         <section class="category-section">
-            <h2 class="category-title">📱 Recommended Apps</h2>
+            <h2 class="category-title">Recommended Apps</h2>
 
             <div class="app-grid">
-                <div class="app-card">
+                <article class="app-card">
                     <div class="app-icon">📖</div>
                     <h3>Quran.com</h3>
-                    <p>Beautiful Quran app with translations, recitations, and tafsir.</p>
+                    <p>Qur'an reading, translations, recitation, and tafsir in a clean web experience.</p>
                     <div class="app-links">
-                        <a href="https://quran.com" target="_blank">Web</a>
-                        <a href="#" target="_blank">iOS</a>
-                        <a href="#" target="_blank">Android</a>
+                        <a href="https://quran.com" target="_blank" rel="noopener noreferrer">Web</a>
+                        <span class="coming-soon">iOS Coming Soon</span>
+                        <span class="coming-soon">Android Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="app-card">
+                <article class="app-card">
                     <div class="app-icon">🕌</div>
                     <h3>Muslim Pro</h3>
-                    <p>Prayer times, Qibla direction, and Islamic calendar.</p>
+                    <p>Prayer times, qiblah, supplications, and everyday Islamic utility tools.</p>
                     <div class="app-links">
-                        <a href="https://www.muslimpro.com" target="_blank">Web</a>
-                        <a href="#" target="_blank">iOS</a>
-                        <a href="#" target="_blank">Android</a>
+                        <a href="https://www.muslimpro.com" target="_blank" rel="noopener noreferrer">Web</a>
+                        <span class="coming-soon">iOS Coming Soon</span>
+                        <span class="coming-soon">Android Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="app-card">
+                <article class="app-card">
                     <div class="app-icon">📚</div>
                     <h3>Hadith Collection</h3>
-                    <p>Complete hadith books with search functionality.</p>
+                    <p>Searchable hadith references and quick reading access for major collections.</p>
                     <div class="app-links">
-                        <a href="https://sunnah.com" target="_blank">Web</a>
-                        <a href="#" target="_blank">iOS</a>
-                        <a href="#" target="_blank">Android</a>
+                        <a href="https://sunnah.com" target="_blank" rel="noopener noreferrer">Web</a>
+                        <span class="coming-soon">iOS Coming Soon</span>
+                        <span class="coming-soon">Android Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="app-card">
+                <article class="app-card">
                     <div class="app-icon">🎓</div>
                     <h3>SeekersGuidance</h3>
-                    <p>Free online Islamic courses and learning.</p>
+                    <p>Course browsing and access to free Islamic educational content online.</p>
                     <div class="app-links">
-                        <a href="https://seekersguidance.org" target="_blank">Web</a>
-                        <a href="#" target="_blank">iOS</a>
-                        <a href="#" target="_blank">Android</a>
+                        <a href="https://seekersguidance.org" target="_blank" rel="noopener noreferrer">Web</a>
+                        <span class="coming-soon">iOS Coming Soon</span>
+                        <span class="coming-soon">Android Coming Soon</span>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <!-- Social Media Section -->
         <section class="category-section">
-            <h2 class="category-title">🌐 Follow on Social Media</h2>
+            <h2 class="category-title">Follow on Social Media</h2>
 
             <div class="social-grid">
-                <div class="social-card">
-                    <div class="social-icon twitter">
-                        <span>𝕏</span>
-                    </div>
-                    <h3>Twitter/X</h3>
-                    <p>Follow authentic Islamic scholars and organizations</p>
+                <article class="social-card">
+                    <div class="social-icon twitter">𝕏</div>
+                    <h3>Twitter / X</h3>
+                    <p>Follow organizations and researchers sharing regular reminders and beneficial threads.</p>
                     <div class="social-accounts">
-                        <a href="https://twitter.com/SeekersGuidance" target="_blank">@SeekersGuidance</a>
-                        <a href="https://twitter.com/YaqeenInstitute" target="_blank">@YaqeenInstitute</a>
+                        <a href="https://twitter.com/SeekersGuidance" target="_blank" rel="noopener noreferrer">@SeekersGuidance</a>
+                        <a href="https://twitter.com/YaqeenInstitute" target="_blank" rel="noopener noreferrer">@YaqeenInstitute</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="social-card">
-                    <div class="social-icon instagram">
-                        <span>📷</span>
-                    </div>
+                <article class="social-card">
+                    <div class="social-icon instagram">📷</div>
                     <h3>Instagram</h3>
-                    <p>Daily Islamic reminders and inspiration</p>
+                    <p>Short reminders, quote cards, and announcements from Islamic projects and teachers.</p>
                     <div class="social-accounts">
-                        <a href="https://instagram.com/seekersguidance" target="_blank">@seekersguidance</a>
-                        <a href="https://instagram.com/yaqeeninstitute" target="_blank">@yaqeeninstitute</a>
+                        <a href="https://instagram.com/seekersguidance" target="_blank" rel="noopener noreferrer">@seekersguidance</a>
+                        <a href="https://instagram.com/yaqeeninstitute" target="_blank" rel="noopener noreferrer">@yaqeeninstitute</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="social-card">
-                    <div class="social-icon telegram">
-                        <span>✈️</span>
-                    </div>
+                <article class="social-card">
+                    <div class="social-icon telegram">✈</div>
                     <h3>Telegram</h3>
-                    <p>Join Islamic knowledge channels</p>
+                    <p>Join channels that share daily reminders, notes, and Islamic reading recommendations.</p>
                     <div class="social-accounts">
-                        <a href="https://t.me/islamicreminders" target="_blank">Islamic Reminders</a>
+                        <a href="https://t.me/islamicreminders" target="_blank" rel="noopener noreferrer">Islamic Reminders</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <!-- Submission Box -->
-        <div class="highlight-box">
-            <h3>📝 Submit a Resource</h3>
-            <p>Know of a valuable Islamic resource that should be listed here? We welcome your suggestions!</p>
-            <p>Please <a href="contact.html" style="color: #c2185b; font-weight: 600;">contact us</a> with your recommendations, and we'll review them for inclusion.</p>
-        </div>
+        <section class="highlight-box">
+            <h3>Submit a Resource</h3>
+            <p>Know a useful and trustworthy Islamic resource that belongs here? You can recommend it for review.</p>
+            <p>Please <a href="contact.html" style="color:#c2185b;font-weight:700;">contact us</a> with the link and a short explanation of why it is beneficial.</p>
+        </section>
 
-        <!-- Disclaimer -->
-        <div class="warning-box">
-            <p><strong>Disclaimer:</strong> The links provided are for educational purposes. While we strive to recommend authentic sources, we encourage users to verify information with qualified local scholars. The inclusion of a link does not necessarily mean we endorse everything on that platform.</p>
-        </div>
-    </div>
+        <section class="warning-box">
+            <p><strong>Disclaimer:</strong> These links are shared for educational benefit. Inclusion here does not mean endorsement of every article, speaker, or opinion found on a platform.</p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Ahl al-Sunnah wal-Jama'ah. All rights reserved.</p>
         <p>May Allah guide us all to the straight path.</p>
     </footer>
 
-    <!-- Add light rays effect -->
     <script>
-        const noorContainer = document.querySelector('.noor-container');
-        for (let i = 0; i < 15; i++) {
-            const ray = document.createElement('div');
-            ray.className = 'light-ray';
-            ray.style.left = Math.random() * 100 + '%';
-            ray.style.animationDelay = Math.random() * 8 + 's';
-            noorContainer.appendChild(ray);
+        const noorContainer = document.querySelector(".noor-container");
+
+        if (noorContainer) {
+            for (let i = 0; i < 15; i++) {
+                const ray = document.createElement("div");
+                ray.className = "light-ray";
+                ray.style.left = Math.random() * 100 + "%";
+                ray.style.animationDelay = Math.random() * 8 + "s";
+                noorContainer.appendChild(ray);
+            }
         }
     </script>
 </body>
