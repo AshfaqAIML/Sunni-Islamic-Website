@@ -1,148 +1,261 @@
-# Islamic Knowledge & Hanafi Teachings Website
+# Unified Islamic Website
 
 **بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ**
 
-A complete, professional portfolio website for hosting Islamic writings, books, and educational resources focused on Sunni Hanafi teachings.
+A professional Islamic knowledge platform dedicated to sharing authentic Sunni Hanafi teachings, scholarly articles, books, and educational resources for the Muslim Ummah.
 
-![Website Status](https://img.shields.io/badge/status-ready%20to%20deploy-success)
-![License](https://img.shields.io/badge/license-free%20for%20Islamic%20education-blue)
-
-## 🌙 About This Website
-
-This website serves as a platform to share Islamic knowledge with clarity, authenticity, and humility. It is designed for ordinary Muslims, students, and seekers who wish to understand the Qur'an, Sunnah, Hadith, and the Hanafi madhhab in simple, accessible language.
-
-### Core Principles
-
-- **Clarity**: Simple language that makes complex Islamic topics accessible
-- **Authenticity**: Content grounded in Qur'an, Sunnah, and qualified scholarship
-- **Humility**: Service to the Ummah without self-promotion
-- **Respect**: Honoring diversity within Islam, avoiding polemics
+![Status](https://img.shields.io/badge/status-active-success)
+![License](https://img.shields.io/badge/license-Islamic%20Educational%20Free-blue)
 
 ---
 
-## 📂 Complete Website Structure
+## Table of Contents
+
+- [Overview](#overview)
+- [Core Principles](#core-principles)
+- [Pages](#pages)
+- [Directory Structure](#directory-structure)
+- [Design System](#design-system)
+- [Technical Stack](#technical-stack)
+- [Performance](#performance)
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License & Permissions](#license--permissions)
+- [Contact](#contact)
+
+---
+
+## Overview
+
+This website serves as a comprehensive platform for Islamic education, offering:
+
+- Books and PDFs on Sunni Islam and the Hanafi madhhab
+- Scholarly articles covering theology, jurisprudence, and spirituality
+- Curated learning resources for students and seekers
+- A Q&A repository addressing common questions
+- Guides on the Hanafi school of thought
+
+The content is presented with clarity and authenticity, making complex Islamic topics accessible to ordinary Muslims, students, and scholars alike.
+
+---
+
+## Core Principles
+
+| Principle | Description |
+|-----------|-------------|
+| **Clarity** | Simple, clear language that makes Islamic topics accessible |
+| **Authenticity** | Content grounded in Qur'an, Sunnah, and qualified scholarship |
+| **Humility** | Service to the Ummah without self-promotion |
+| **Respect** | Honoring diversity within Islam while avoiding polemics |
+
+---
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Homepage — welcome message, featured content, and site navigation |
+| `about.html` | About the author and mission of the platform |
+| `books.html` | Islamic books library with direct PDF download links |
+| `articles.html` | Articles and essays organized by category |
+| `ahmadrazakhan.html` | Dedicated page on Imam Ahmad Raza Khan's contributions |
+| `hanafi.html` | Comprehensive guide to the Hanafi madhhab |
+| `questions.html` | Frequently asked questions with detailed scholarly answers |
+| `additionalResources.html` | Supplementary learning materials and references |
+| `resources.html` | Recommended books, curricula, and study guidance |
+| `Awliya_Allah.html` | Biographies and teachings of Awliya Allah (saints) |
+| `links.html` | Curated external links to Islamic knowledge platforms |
+| `contact.html` | Contact form and email for inquiries |
+
+---
+
+## Directory Structure
 
 ```
-islamic-portfolio/
-├── index.html              # Homepage with welcome and navigation
-├── about.html              # About the author
-├── books.html              # Islamic books listing with downloads
-├── articles.html           # Articles & essays organized by category
-├── hanafi.html             # Complete guide to Hanafi madhhab
-├── questions.html          # Common questions with detailed answers
-├── resources.html          # Recommended books and learning guidance
-├── contact.html            # Contact page with email
-├── README.md               # This documentation file
-├── .gitignore              # Git ignore file
+unified-islamic-website/
+├── index.html                  # Homepage
+├── about.html                  # About page
+├── books.html                  # Books library
+├── articles.html               # Articles listing
+├── hanafi.html                 # Hanafi madhhab guide
+├── questions.html              # Q&A page
+├── resources.html              # Learning resources
+├── additionalResources.html    # Supplementary resources
+├── ahmadrazakhan.html          # Imam Ahmad Raza Khan page
+├── Awliya_Allah.html           # Saints biographies
+├── links.html                  # External links
+├── contact.html                # Contact page
 │
-├── books/                  # Folder for PDF books
-│   ├── Book1.pdf
-│   ├── Book2.pdf
-│   └── Book3.pdf
+├── style.css                   # Global stylesheet
+├── script.js                   # JavaScript (light effects, interactions)
 │
-├── articles/               # Folder for individual article pages
-│   ├── understanding-quran.html
-│   ├── status-of-sunnah.html
-│   └── (more articles...)
-│
-└── assets/                 # Optional: for images, if needed
-    └── (geometric patterns, Islamic art, etc.)
+├── assets/                     # Static assets (images, icons)
+├── .github/workflows/          # CI/CD configuration
+├── .vercel/                    # Vercel deployment config
+├── .gitignore                  # Git ignore rules
+├── README.md                   # This file
+└── LICENSE.md                  # License information
 ```
 
 ---
 
-## 🎨 Design Features
+## Design System
 
-### Visual Design
-- **Color Scheme**: Green (#2e7d32), White, and Rose (#c2185b)
-- **Typography**: Georgia and Baskerville serif fonts for scholarly feel
-- **Noor Effect**: Falling light rays symbolizing divine guidance
-- **Glassmorphism**: Modern frosted-glass effects with backdrop blur
-- **Responsive**: Mobile-first design, works on all devices
+### Color Palette
 
-### User Experience
-- Clean, minimal layout
-- No ads, popups, or distractions
-- Fast loading (~20-30KB per page)
-- Accessible navigation
-- Reading-optimized spacing and line height
+| Token | Color | Hex | Usage |
+|-------|-------|-----|-------|
+| Primary | Green | `#2e7d32` | Headings, accents, buttons |
+| Secondary | Rose | `#c2185b` | Highlights, hover states |
+| Background | Off-white | `#faf6f0` | Page background |
+| Text | Dark | `#1a1a1a` | Body text |
+| Glass | Frosted | `rgba(255,255,255,0.1)` | Glassmorphism cards |
 
+### Typography
 
-## 📚 File Organization for PDFs and Articles
+- **Headings**: Georgia (serif) — scholarly, authoritative feel
+- **Body**: Baskerville / Palatino (serif) — optimal readability for long-form content
+- **Arabic**: Traditional Arabic / Scheherazade — authentic script rendering
 
-### For PDF Books
+### Visual Effects
 
-
-
----
-
-## 🔧 Technical Details
-
-### Technologies Used
-- **HTML5**: Semantic structure
-- **CSS3**: Gradients, animations, flexbox
-- **Vanilla JavaScript**: Light effects (no frameworks)
-- **No dependencies**: Pure code, no external libraries
-
-### Browser Compatibility
-- ✅ Chrome, Firefox, Safari, Edge (latest versions)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-- ✅ Works without JavaScript (effects disabled gracefully)
-
-### Performance Metrics
-- **Page Size**: 20-30KB per page
-- **Load Time**: < 1 second on average connection
-- **Mobile Score**: 95+ on PageSpeed Insights
-- **SEO-Friendly**: Semantic HTML, proper heading hierarchy
+- **Noor Effect**: Falling light rays symbolizing divine guidance (CSS animation)
+- **Glassmorphism**: Frosted-glass card components with backdrop blur
+- **Gradient Overlays**: Smooth transitions between color accents
+- **Subtle Shadows**: Depth without visual noise
 
 ---
 
+## Technical Stack
 
+- **HTML5** — Semantic, accessible markup
+- **CSS3** — Flexbox, Grid, animations, custom properties, backdrop filters
+- **Vanilla JavaScript** — Pure JS for DOM interactions and effects (no frameworks)
+- **Zero Dependencies** — Fully self-contained, no npm, no build step
 
-## 🔒 Copyright & Permissions
+### Browser Support
+
+| Browser | Support |
+|---------|---------|
+| Chrome (latest) | ✅ Full |
+| Firefox (latest) | ✅ Full |
+| Safari (latest) | ✅ Full |
+| Edge (latest) | ✅ Full |
+| Chrome Mobile | ✅ Full |
+| iOS Safari | ✅ Full |
+| No JavaScript | ✅ Graceful degradation |
+
+---
+
+## Performance
+
+| Metric | Value |
+|--------|-------|
+| Page size | ~20–30 KB per page |
+| Load time | < 1s on average connection |
+| Mobile score | 95+ PageSpeed Insights |
+| SEO | Semantic HTML, proper heading hierarchy, meta tags |
+
+---
+
+## Getting Started
+
+### Local Development
+
+This is a static website — no build tools or package managers required.
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AshfaqAIML/Sunni-Islamic-Website.git
+   cd Sunni-Islamic-Website
+   ```
+
+2. **Open locally**
+   - Open `index.html` directly in your browser, or
+   - Serve with any HTTP server (e.g., `python -m http.server 8000`, `npx serve .`)
+
+3. **Edit pages**
+   - Modify any `.html` file for content changes
+   - Edit `style.css` for visual changes
+   - Edit `script.js` for behavior changes
+
+### Project Configuration
+
+- `.gitignore` — Excludes OS files, editor artifacts, and `.vercel/` directory
+- `.github/workflows/static.yml` — GitHub Actions for automatic deployment to GitHub Pages
+- `.vercel/project.json` — Vercel project binding for production deployment
+
+---
+
+## Deployment
+
+### Vercel (Recommended)
+
+The project is pre-configured for Vercel deployment:
+
+1. Push to `https://github.com/AshfaqAIML/Sunni-Islamic-Website`
+2. Connect the repository in [Vercel Dashboard](https://vercel.com)
+3. Vercel auto-detects static HTML — no configuration needed
+4. Live at: `https://unified-islamic-website.vercel.app`
+
+### GitHub Pages
+
+A GitHub Actions workflow (`.github/workflows/static.yml`) is included for automatic deployment to GitHub Pages. Enable it in your repository's Pages settings.
+
+### Any Static Host
+
+Since the site is pure HTML/CSS/JS, it can be deployed to any static host:
+- Netlify, Cloudflare Pages, Render, Firebase Hosting
+- Any traditional web server (Apache, Nginx)
+- Direct FTP upload
+
+---
+
+## Contributing
+
+Contributions that align with Ahl al-Sunnah wa al-Jama'ah are welcome.
+
+### Guidelines
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Ensure content is authentic and properly attributed
+4. Maintain consistent code style and design language
+5. Submit a pull request with a clear description of changes
+
+### Content Standards
+
+- All content must be grounded in Qur'an, authentic Sunnah, and qualified scholarship
+- Sources and references should be cited where applicable
+- Language should be respectful, clear, and accessible
+- Avoid polemics and sectarian disputes
+
+---
+
+## License & Permissions
 
 All content on this website is:
-- ✅ Free for educational use
-- ✅ May be downloaded, shared, distributed
-- ✅ Should be attributed to original author
-- ❌ Not for commercial use without permission
+
+- **Free for personal and educational use** — Download, read, share
+- **Attribution requested** — Credit the original author when redistributing
+- **Not for commercial use** without explicit written permission
 
 PDF books and articles are provided freely for the sake of Allah.
 
+---
 
+## Contact
 
-
-## 📝 .gitignore File
-
-The `.gitignore` file tells Git which files to ignore. Recommended contents:
-```
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Editor Files
-*.swp
-*.swo
-*~
-.vscode/
-.idea/
-
-# Temporary Files
-*.tmp
-*.bak
-*.log
-
-# Don't ignore these (commented out)
-# books/
-# articles/
-```
+- **Live Website**: [https://unified-islamic-website.vercel.app](https://unified-islamic-website.vercel.app)
+- **Repository**: [https://github.com/AshfaqAIML/Sunni-Islamic-Website](https://github.com/AshfaqAIML/Sunni-Islamic-Website)
 
 ---
 
-## 🤲 Du'a for This Project
+## Du'a
 
 > اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي وَعَلِّمْنِي مَا يَنْفَعُنِي وَزِدْنِي عِلْمًا
-> 
+>
 > *O Allah, benefit me with what You have taught me, teach me what will benefit me, and increase me in knowledge.*
 
 > رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ
@@ -151,58 +264,6 @@ Thumbs.db
 
 ---
 
-## 🔄 Version History
-
-### v1.0 (January 2026) - Initial Release
-- ✅ Complete 8-page website
-- ✅ Homepage with animated effects
-- ✅ Books page with download functionality
-- ✅ Articles listing page
-- ✅ Comprehensive Hanafi madhhab guide
-- ✅ Q&A page with detailed answers
-- ✅ Resources page with book recommendations
-- ✅ About page with author bio
-- ✅ Contact page with email
-- ✅ Fully responsive mobile design
-- ✅ Professional Islamic aesthetic
-
----
-
-## 📧 Support & Contact
-
-For questions about this website template or Islamic content:
-- Use the contact page on your deployed website
-- For technical issues with the code, check the Troubleshooting section above
-
----
-
-
-
-## 📄 License
-
-This website template is provided freely for Islamic educational purposes. You may use, modify, and distribute it as needed for da'wah and teaching.
-
-**May Allah accept this effort and make it beneficial for the Ummah.**
-
----
-
-## 🌟 Acknowledgments
-
-All praise is due to Allah. Any good in this project is from Him alone, and any mistakes are from myself and Shaytan. May Allah forgive us and accept our efforts.
-
-Special thanks to the scholars and teachers who preserve and transmit Islamic knowledge with sincerity and excellence.
-
----
-
-*Last updated: January 2026*  
-<<<<<<< HEAD
-*Repository: https://github.com/[your-username]/islamic-portfolio*  
-*Live Website: https://[your-username].github.io/islamic-portfolio*
-
 **Assalamu alaikum wa rahmatullahi wa barakatuh**
-=======
-*Repository: https://github.com/Dar-Ishfaq-1/Sunni-Islamic-Portfolio.git*  
-*Live Website: https://[your-username].github.io/islamic-portfolio*
 
-**Assalamu alaikum wa rahmatullahi wa barakatuh**
->>>>>>> origin/main
+*Last updated: July 2026*
